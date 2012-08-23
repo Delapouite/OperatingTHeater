@@ -1,0 +1,9 @@
+html, body {
+	background: #fff;
+	color: #333;
+	font-family: sans-serif;
+}
+
+canvas {
+	border: 1px solid #333;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OperatingTHeater</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="styles/style.css"/>
+		<script src="scripts/Buffer.js"></script>
+		<script src="scripts/chunkRenderer.js"></script>
+		<script src="scripts/rnc.js"></script>
+		<script src="scripts/app.js"></script>
+	</head>
+	<body>
+		<p><label for="tableInput">Table (.TAB)</label><input type="file" id="tableInput" name="table"/></p>
+		<p><label for="dataInput">Data (.DAT)</label><input type="file" id="dataInput" name="data"/></p>
+		<p><label for="paletteInput">Palette (.PAL)</label><input type="file" id="paletteInput" name="palette"/></p>
+		<canvas id="palette" width="256" height="256"></canvas>
+		<div id="sprites"></div>
+	</body>
+</html>
