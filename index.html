@@ -10,10 +10,36 @@
 		<script src="scripts/app.js"></script>
 	</head>
 	<body>
-		<p><label for="tableInput">Table (.TAB)</label><input type="file" id="tableInput" name="table"/></p>
-		<p><label for="dataInput">Data (.DAT)</label><input type="file" id="dataInput" name="data"/></p>
-		<p><label for="paletteInput">Palette (.PAL)</label><input type="file" id="paletteInput" name="palette"/></p>
-		<canvas id="palette" width="256" height="256"></canvas>
+		<h1>OperatingTHeater : a Corsix TH graphics web viewer</h1>
+		<p>Each graphic element is not stored in a single image file (like a PNG or JPG). Their data is split between 3 types of files that need to be loaded consequently.</p>
+		<form>
+			<fieldset>
+				<legend>1 - Palette</legend>
+				<p>Contains indexed colors information.</p>
+				<p>
+					<label for="paletteInput">Palette file (.PAL or MPALETTE.DAT)</label>
+					<input type="file" id="paletteInput" name="palette"/>
+				</p>
+				<canvas id="palette" width="256" height="256"></canvas>
+			</fieldset>
+			<fieldset>
+				<legend>2 - Table</legend>
+				<p>Contains sprites count and dimensions.</p>
+				<p>
+					<label for="tableInput">Table file (.TAB)</label>
+					<input type="file" id="tableInput" name="table"/>
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>3 - Data</legend>
+				<p>Contains pixels position mixed with their color codes.</p>
+				<p>
+					<label for="dataInput">Data file (.DAT)</label>
+					<input type="file" id="dataInput" name="data"/>
+				</p>
+			</fieldset>
+		</form>
+		<h2>Result</h2>
 		<div id="sprites"></div>
 	</body>
 </html>

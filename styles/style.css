@@ -7,3 +7,10 @@ html, body {
 canvas {
 	border: 1px solid #333;
 }
+
+fieldset {
+	display: table-cell;
+	margin: 0;
+	vertical-align: top;
+	width: 32%;
+}
