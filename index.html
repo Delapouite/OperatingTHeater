@@ -13,14 +13,13 @@
 		<h1>OperatingTHeater : a Corsix TH graphics web viewer</h1>
 		<p>Each graphic element is not stored in a single image file (like a PNG or JPG). Their data is split between 3 types of files that need to be loaded consequently.</p>
 		<form>
-			<fieldset>
+			<fieldset id="paletteFieldset">
 				<legend>1 - Palette</legend>
 				<p>Contains indexed colors information.</p>
 				<p>
 					<label for="paletteInput">Palette file (.PAL or MPALETTE.DAT)</label>
 					<input type="file" id="paletteInput" name="palette"/>
 				</p>
-				<canvas id="palette" width="256" height="256"></canvas>
 			</fieldset>
 			<fieldset>
 				<legend>2 - Table</legend>

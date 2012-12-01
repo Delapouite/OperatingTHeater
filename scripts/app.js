@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Palette
 
-	var paletteCanvas = document.getElementById('palette'),
-		paletteContext = paletteCanvas.getContext('2d'),
-		paletteImageData = paletteContext.getImageData(0, 0, paletteCanvas.width, paletteCanvas.height),
+	var paletteFieldset = document.getElementById('paletteFieldset'),
+		// the original palette contained in the file is 16x16, too small to watch so the canvas is set to 256x256 (zoomed 16 times)
+		paletteZoom = 16,
 		paletteUpscales = [
 			0x00, 0x04, 0x08, 0x0C, 0x10, 0x14, 0x18, 0x1C,
 			0x20, 0x24, 0x28, 0x2D, 0x31, 0x35, 0x39, 0x3D,
@@ -45,9 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			0xA2, 0xA6, 0xAA, 0xAE, 0xB2, 0xB6, 0xBA, 0xBE,
 			0xC2, 0xC6, 0xCA, 0xCE, 0xD2, 0xD7, 0xDB, 0xDF,
 			0xE3, 0xE7, 0xEB, 0xEF, 0xF3, 0xF7, 0xFB, 0xFF
-		],
-		// the original palette contained in the file is 16x16, too small to watch so the canvas is set to 256x256 (zoomed 16 times)
-		paletteZoom = paletteCanvas.width / 16;
+		];
 
 	document.getElementById('paletteInput').addEventListener('change', loadFile, false);
 
@@ -94,8 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		paletteColors = insertAlphaBytes(buffer);
 		// zoom this buffer to increase visibility
 		buffer = zoomBuffer(paletteColors, paletteZoom);
-		paletteImageData.data.set(buffer);
-		paletteContext.putImageData(paletteImageData, 0, 0);
+		paletteFieldset.appendChild(createCanvas(256, 256, buffer));
 	};
 
 	// Table
